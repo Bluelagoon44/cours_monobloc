@@ -1,0 +1,28 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="./assets/css/register.css" />
+{% endblock %}
+
+{% block title %}
+    <title>Yolo</title>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <h1>Formulaire d'inscription {{ user.firstName }}</h1>
+            <form action="/addbook" method="post">
+                <div>
+                    <label for="title">Titre du livre</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div>
+                    <label for="author">Auteur du livre</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <button>Ajouter un livre</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}

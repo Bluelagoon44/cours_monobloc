@@ -1,12 +1,21 @@
 <header>
     <nav>
         <ul>
+        {% if user %}
+            <li>
+                <a href="/logout">Déconnexion</a>
+            </li>
+            <li>
+                <a href="/addbook">Ajouter un livre</a>
+            </li>
+        {% else %}
             <li>
                 <a href="/register">Inscription</a>
             </li>
             <li>
                 <a href="/login">Connexion</a>
             </li>
+        {% endif %}
         </ul>
     </nav>
 </header>

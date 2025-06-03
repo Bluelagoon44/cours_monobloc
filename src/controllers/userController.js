@@ -52,3 +52,8 @@ exports.postLogin = async (req, res) => {
         res.render("pages/login.twig", {error})
     }
 }
+
+exports.getLogout = (req, res) => {
+    req.session.destroy();
+    res.redirect("/login")
+}
