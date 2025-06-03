@@ -1,0 +1,30 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="./assets/css/register.css" />
+{% endblock %}
+
+{% block title %}
+    <title>Yolo</title>
+{% endblock %}
+
+{% block main %}
+    <main>
+        <section>
+            <h1>Formulaire de connexion</h1>
+            <form method="post">
+                <div>
+                    <label for="mail">Votre mail</label>
+                    <input type="email" name="mail" id="mail" />
+                    <p>{{ error.mail }}</p>
+                </div>
+                <div>
+                    <label for="password">Votre mot de passe</label>
+                    <input type="password" name="password" id="password" />
+                    <p>{{ error.password }}</p>
+                </div>
+                <button>Se connecter</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}

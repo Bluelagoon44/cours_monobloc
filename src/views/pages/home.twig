@@ -1,0 +1,27 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="./assets/css/register.css" />
+{% endblock %}
+
+{% block title %}
+    <title>Accueil - Bookstore</title>
+{% endblock %}
+
+{% block main %}
+   <main>
+        <section>
+            <h2>Bienvenue {{ user.firstName }} {{ user.lastName }}</h2>
+            <div>
+                <p>Vous êtes maintenant connecté!</p>
+                <p>Email: {{ user.mail }}</p>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="/books" style="text-decoration: none;">
+                    <button>Voir mes livres</button>
+                </a>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,7 @@
+model Book{
+  id Int @id @default(autoincrement())
+  title String
+  author String?
+  id_user Int?
+  user User? @relation(fields: [id_user], references: [id])
+}
