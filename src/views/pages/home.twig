@@ -15,12 +15,23 @@
             <div>
                 <p>Vous êtes maintenant connecté!</p>
                 <p>Email: {{ user.mail }}</p>
-            </div>
-            
-            <div style="margin-top: 20px;">
-                <a href="/books" style="text-decoration: none;">
-                    <button>Voir mes livres</button>
-                </a>
+                <table>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.title }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>
+                                <a href="/deleteBook/{{book.id}}">Supprimer</a>
+                                <a href="/updateBook/{{book.id}}">Modifier</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </div>
         </section>
     </main>

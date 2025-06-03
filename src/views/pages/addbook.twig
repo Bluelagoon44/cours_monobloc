@@ -11,17 +11,19 @@
 {% block main %}
     <main>
         <section>
-            <h1>Formulaire d'inscription {{ user.firstName }}</h1>
-            <form action="/addbook" method="post">
+            <h1>Formulaire {% if book %}d'édition{% else %}d'ajout de livre{% endif %}</h1>
+            <form action=
+                {% if book %}"/updateBook/{{book.id}}"
+                {% else %}"/addBook"{% endif %} method="post">
                 <div>
                     <label for="title">Titre du livre</label>
-                    <input type="text" id="title" name="title">
+                    <input type="text" id="title" name="title" value="{{book.title}}">
                 </div>
                 <div>
                     <label for="author">Auteur du livre</label>
-                    <input type="text" id="author" name="author">
+                    <input type="text" id="author" name="author" value="{{book.author}}">
                 </div>
-                <button>Ajouter un livre</button>
+                <button>{% if book %}Modifier{% else %}Ajouter un livre{% endif %}</button>
             </form>
         </section>
     </main>
